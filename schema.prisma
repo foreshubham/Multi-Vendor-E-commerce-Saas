@@ -1,0 +1,27 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mongodb"
+    url      = env("DATABASE_URL")
+}
+
+model images {
+    id String @id @defualt(auto()) @map("_id") @db.ObjectId
+    file_id String
+    url String
+    userId String? @db.ObjectId
+    users users? @realtion(fields: [userId], references: [id])
+}
+
+model users {
+    id String @id @defualt(auto()) @map("_id") @db.ObjectId
+    name String
+    email String @unique
+    avatar images?
+    following String[]
+    password String? // optional field because for OAuth users
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
