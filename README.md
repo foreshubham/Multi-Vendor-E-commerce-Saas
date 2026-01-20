@@ -10,7 +10,7 @@ Your new, shiny [Nx workspace](https://nx.dev) is almost ready...
 [Click here to finish setting up your workspace!](https://cloud.nx.app/connect/lSQ45VEGf9)
 
 
-## Run task
+## Run 
 
 To run the dev server for your app, use:
 
